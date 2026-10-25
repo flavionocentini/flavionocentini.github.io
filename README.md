@@ -1,2 +1,1 @@
-# flavionocentini.github.io
-flavionsb.com
+# flavionsb.com
