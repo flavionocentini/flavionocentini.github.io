@@ -230,6 +230,12 @@ svg {
   display: none;
 }
 
+@media (min-width: 521px) {
+  h1 {
+    padding-right: 48px;
+  }
+}
+
 @media (max-width: 520px) {
   main {
     border: 0;
@@ -239,7 +245,7 @@ svg {
     padding: 24px 20px;
   }
 
-  main > section:first-child {
+  main > section:first-of-type {
     padding-top: 56px;
   }
 
