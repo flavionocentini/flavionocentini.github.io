@@ -1,4 +1,3 @@
-/* Dark is the default. Light is switched on with data-theme="light" (button in the corner). */
 :root {
   --bg: #0a0a0a;
   --fg: #f2f2ee;
@@ -15,7 +14,6 @@
   --chip: #f0f0ec;
 }
 
-/* icons that are black and disappear on a dark background */
 :root:not([data-theme="light"]) .chips img.invert {
   filter: invert(1);
 }
@@ -199,7 +197,6 @@ svg {
   border-radius: 2px;
 }
 
-/* theme button, top right corner */
 .theme-btn {
   position: absolute;
   top: 14px;
@@ -228,7 +225,6 @@ svg {
   vertical-align: baseline;
 }
 
-/* show the icon of the theme you will switch to */
 :root:not([data-theme="light"]) .theme-btn .moon,
 :root[data-theme="light"] .theme-btn .sun {
   display: none;
