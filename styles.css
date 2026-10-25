@@ -1,218 +1,258 @@
+/* Dark is the default. Light is switched on with data-theme="light" (button in the corner). */
 :root {
---bg: #fbfbfa;
---fg: #161616;
---muted: #6f6f6b;
---line: #dcdcd6;
---chip: #f0f0ec;
+  --bg: #0a0a0a;
+  --fg: #f2f2ee;
+  --muted: #9a9a94;
+  --line: #2c2c2a;
+  --chip: #1c1c1c;
 }
 
-@media (prefers-color-scheme: dark) {
-:root {
-    --bg: #0a0a0a;
-    --fg: #f2f2ee;
-    --muted: #9a9a94;
-    --line: #2c2c2a;
-    --chip: #1c1c1c;
+:root[data-theme="light"] {
+  --bg: #fbfbfa;
+  --fg: #161616;
+  --muted: #6f6f6b;
+  --line: #dcdcd6;
+  --chip: #f0f0ec;
 }
 
-.chips img.invert {
-    filter: invert(1);
-}
+/* icons that are black and disappear on a dark background */
+:root:not([data-theme="light"]) .chips img.invert {
+  filter: invert(1);
 }
 
 * {
-box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 body {
-margin: 0;
-background: var(--bg);
-color: var(--fg);
-font: 16px/1.6 Inter, sans-serif;
+  margin: 0;
+  background: var(--bg);
+  color: var(--fg);
+  font: 16px/1.6 Inter, sans-serif;
 }
 
 main {
-max-width: 860px;
-margin: 0 auto;
-border-left: 1px dashed var(--line);
-border-right: 1px dashed var(--line);
+  position: relative;
+  max-width: 860px;
+  margin: 0 auto;
+  border-left: 1px dashed var(--line);
+  border-right: 1px dashed var(--line);
 }
 
 section {
-padding: 28px;
-border-bottom: 1px dashed var(--line);
+  padding: 28px;
+  border-bottom: 1px dashed var(--line);
 }
 
 h1 {
-margin: 0;
-font: 600 clamp(22px, 4.5vw, 34px)/1.2 Inter, sans-serif;
-letter-spacing: -0.025em;
+  margin: 0;
+  font: 600 clamp(22px, 4.5vw, 34px)/1.2 Inter, sans-serif;
+  letter-spacing: -0.025em;
 }
 
 h1 span {
-background: var(--line);
-padding: 0 0.15em;
-border-radius: 4px;
+  background: var(--line);
+  padding: 0 0.15em;
+  border-radius: 4px;
 }
 
 h2 {
-margin: 0 0 16px;
-font: 13px JetBrains Mono, monospace;
+  margin: 0 0 16px;
+  font: 13px JetBrains Mono, monospace;
 }
 
 .two {
-display: flex;
-gap: 48px;
+  display: flex;
+  gap: 48px;
 }
 
 .two > div {
-flex: 1;
+  flex: 1;
 }
 
 h3 {
-margin: 0;
-font-size: 16px;
-font-weight: 500;
+  margin: 0;
+  font-size: 16px;
+  font-weight: 500;
 }
 
 p {
-margin: 0;
-color: var(--muted);
+  margin: 0;
+  color: var(--muted);
 }
 
 a {
-color: inherit;
+  color: inherit;
 }
 
 .small {
-margin: 2px 0 6px;
-color: var(--muted);
-font: 12px JetBrains Mono, monospace;
+  margin: 2px 0 6px;
+  color: var(--muted);
+  font: 12px JetBrains Mono, monospace;
 }
 
 ul {
-margin: 0;
-padding-left: 18px;
-color: var(--muted);
+  margin: 0;
+  padding-left: 18px;
+  color: var(--muted);
 }
 
 li {
-padding: 5px 0;
+  padding: 5px 0;
 }
 
 li b {
-color: color-mix(in srgb, var(--fg) 20%, var(--muted));
-font-weight: 600;
+  color: color-mix(in srgb, var(--fg) 20%, var(--muted));
+  font-weight: 600;
 }
 
 .row,
 .links {
-display: flex;
-justify-content: space-between;
-gap: 16px;
-flex-wrap: wrap;
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+  flex-wrap: wrap;
 }
 
 .row {
-padding: 4px 0;
+  padding: 4px 0;
 }
 
 .row span:last-child {
-color: var(--muted);
+  color: var(--muted);
 }
 
 .links a {
-color: var(--muted);
-font-size: 14px;
+  color: var(--muted);
+  font-size: 14px;
 }
 
 .links span a {
-margin-left: 18px;
+  margin-left: 18px;
 }
 
 .item {
-display: flex;
-gap: 16px;
-margin-bottom: 22px;
+  display: flex;
+  gap: 16px;
+  margin-bottom: 22px;
 }
 
 .item img {
-width: 48px;
-height: 48px;
-flex: none;
-border-radius: 10px;
-background: var(--chip);
-object-fit: cover;
+  width: 48px;
+  height: 48px;
+  flex: none;
+  border-radius: 10px;
+  background: var(--chip);
+  object-fit: cover;
 }
 
 .btn {
-display: inline-block;
-margin-top: 8px;
-font-size: 14px;
-text-underline-offset: 3px;
+  display: inline-block;
+  margin-top: 8px;
+  font-size: 14px;
+  text-underline-offset: 3px;
 }
 
 .btn:hover {
-color: var(--muted);
+  color: var(--muted);
 }
 
 .chips {
-display: flex;
-flex-wrap: wrap;
-gap: 8px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
 }
 
 .chips span {
-display: inline-flex;
-align-items: center;
-gap: 7px;
-padding: 4px 11px;
-background: var(--chip);
-border: 1px solid var(--line);
-border-radius: 6px;
-color: var(--fg);
-font: 500 14px/1.4 Inter, sans-serif;
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  padding: 4px 11px;
+  background: var(--chip);
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  color: var(--fg);
+  font: 500 14px/1.4 Inter, sans-serif;
 }
 
 .chips img,
 .chips svg {
-width: 16px;
-height: 16px;
-margin: 0;
-flex: none;
-border-radius: 0;
-vertical-align: baseline;
+  width: 16px;
+  height: 16px;
+  margin: 0;
+  flex: none;
+  border-radius: 0;
+  vertical-align: baseline;
 }
 
 footer {
-padding: 20px 28px;
-color: var(--muted);
-font: 12px JetBrains Mono, monospace;
+  padding: 20px 28px;
+  color: var(--muted);
+  font: 12px JetBrains Mono, monospace;
 }
 
 svg {
-width: 21px;
-height: 14px;
-margin-right: 10px;
-vertical-align: -2px;
-border-radius: 2px;
+  width: 21px;
+  height: 14px;
+  margin-right: 10px;
+  vertical-align: -2px;
+  border-radius: 2px;
+}
+
+/* theme button, top right corner */
+.theme-btn {
+  position: absolute;
+  top: 14px;
+  right: 14px;
+  display: grid;
+  place-items: center;
+  width: 34px;
+  height: 34px;
+  padding: 0;
+  background: var(--chip);
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  color: var(--muted);
+  cursor: pointer;
+}
+
+.theme-btn:hover {
+  color: var(--fg);
+}
+
+.theme-btn svg {
+  width: 17px;
+  height: 17px;
+  margin: 0;
+  border-radius: 0;
+  vertical-align: baseline;
+}
+
+/* show the icon of the theme you will switch to */
+:root:not([data-theme="light"]) .theme-btn .moon,
+:root[data-theme="light"] .theme-btn .sun {
+  display: none;
 }
 
 @media (max-width: 520px) {
-main {
+  main {
     border: 0;
-}
+  }
 
-section {
+  section {
     padding: 24px 20px;
-}
+  }
 
-footer {
+  main > section:first-child {
+    padding-top: 56px;
+  }
+
+  footer {
     padding: 20px;
-}
+  }
 
-.two {
+  .two {
     flex-direction: column;
     gap: 24px;
-}
+  }
 }
