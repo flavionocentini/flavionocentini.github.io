@@ -245,8 +245,14 @@ svg {
     padding: 24px 20px;
   }
 
-  main > section:first-of-type {
-    padding-top: 56px;
+  .tag-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .theme-btn {
+    position: static;
   }
 
   footer {
